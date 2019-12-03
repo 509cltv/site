@@ -1,0 +1,121 @@
+.Product-wrapper 
+  margin: 40px auto 0
+  display: flex
+  flex-wrap: wrap
+  justify-content: left
+  
+.Product__container
+  flex: 0 1 calc(45% - 16px)
+  margin-left: 2%
+  margin-right: 2%
+  margin-bottom: 3%
+  background-color: #d8d8d8
+  display: block
+  position: relative
+  overflow: hidden
+
+.Product 
+  display: block
+  transition: all .5s 
+  img
+    object-fit: cover
+    transition: all .5s 
+
+
+.Product__overlay 
+  transition: all .5s ease
+  position: absolute
+  bottom: -25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Raleway', sans-serif;
+
+.Product__container:hover 
+  .Product__overlay
+    bottom: 1%
+  .Product
+    img 
+      -ms-transform: scale(1.05); /* IE 9 */
+      -webkit-transform: scale(1.05); /* Safari 3-8 */
+      transform: scale(1.05); 
+  cursor: pointer
+
+
+.Product__title 
+  font-size: 3.3rem
+  margin-top: 1rem
+  margin-bottom: 0.4rem
+  color: black
+
+
+.Product__price 
+  font-size: 2.1rem
+  margin-bottom: 0.4rem
+  color: black
+
+
+.Product__option 
+  width: 100%
+  margin-bottom: 10px
+  color: black
+  input 
+    width: 30px
+    padding-left: 1%
+    margin-left: 1%
+
+
+.Product__quantity 
+  width: 15%
+  margin-bottom: 10px
+  color: black
+
+.Product__buy
+  border-radius: 20px
+  color: black
+  font-size: 1.3rem
+  padding: 10px 25px
+  transition: all 0.3s ease
+
+  &:hover
+    background-color: #FF2C21
+.Product__buy.button
+  background-color: white
+.Product__buy.itemPage
+  background-color: black
+  font-size: 1rem
+  padding: 10px 22px
+  color: white
+  border-radius: 0
+  text-transform: uppercase
+  font-size: 1rem
+  font-weight: 600
+  cursor: pointer
+
+.side-bar
+  font-family: 'Oxygen Mono', monospace
+  text-align: right
+
+.name
+  font-size: 8rem
+  line-height: 80%
+  margin: 40px auto 0
+
+.underName
+  font-size: 1.2rem
+
+.menu
+  font-size: 1.8rem
+  a
+    color: black
+
+.selected
+  font-weight: bold
+
+.cart_button
+  // background-color: transparent
+  // border: none
+  color: black
+  font-size: 2.5rem
+
+.spacer
+  height: 15rem
