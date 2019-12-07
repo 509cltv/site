@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Product from './Product';
+import Product from '../Product/index';
 import { connect } from 'react-redux'
 import {withRouter} from 'react-router-dom';
 
@@ -29,7 +29,7 @@ class Products extends Component {
       }
     });
     return (
-      <div className="Product-wrapper">
+      <div className="ProductWrapper">
         {products}
       </div>
     );

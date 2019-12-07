@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import store from '../../store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { withRouter} from 'react-router-dom';
-import Products from '../shopify/Products';
-import './styles.sass';
+import Products from '../Products/index';
+import './styles.scss';
 
 class MainStore extends Component {
   

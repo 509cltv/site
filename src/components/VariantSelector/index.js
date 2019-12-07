@@ -1,19 +1,20 @@
 import React, {Component} from 'react';
-import './styles.sass'
+import './styles.scss'
 
 class VariantSelector extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      size: null
+      size: "XS"
     }
   }
   render() {
     return (
-      <div className="Product__size" id="dropdown-basic-button">
-         {this.props.option.values.map((value) => {
+      <div className="ProductSize" id="dropdown-basic-button">
+         {this.props.option.values.map((value, index) => {
+          
           return (
-            <input className={this.state.size === value.value ? "input__button selected" : "input__button"} type="button" key={value.value} onClick={(e) => {this.props.handleOptionChange(value.value); this.setState({size: value.value})}} value={value.value}></input>
+            <button className={this.state.size === value.value ? "sizeButton selected" : "sizeButton unselected"} type="button" onClick={(e) => {this.props.handleOptionChange(value.value); this.setState({size: value.value})}} value={value.value}>{value.value}</button>
           )
         })}
       </div>

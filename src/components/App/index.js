@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container,Row, Col} from 'react-bootstrap';
-import Cart from '../shopify/Cart.js';
+import Cart from '../Cart/index';
 import store from '../../store';
-import '../../styles/animations.sass';
+import '../../styles/animations.scss';
 import {withRouter, Link} from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
@@ -65,7 +65,7 @@ class App extends Component {
           />
           <Container fluid={true}>
             <Row>
-              <Row className="mobile-menu">
+              <Row className="mobileMenu">
                 <Col onClick={() => this.setState({sideBarOpen: true})}>
                   <div className="bar1"></div>
                   <div className="bar2"></div>
@@ -76,7 +76,7 @@ class App extends Component {
               </Row>
               <div className={this.state.sideBarOpen ? "openCover" : "closedCover"} onClick={() => this.setState({sideBarOpen: false})}></div>
 
-              <Col className={this.state.sideBarOpen ? "side-bar openSide" : "side-bar"} lg="2">
+              <Col className={this.state.sideBarOpen ? "sideBar openSide" : "sideBar"} lg="2">
                 <Row className="d-flex justify-content-end">
                   <ul className="list-inline ">
                     <li className="name">509</li>

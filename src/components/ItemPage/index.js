@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import './styles.sass';
+import './styles.scss';
 import { connect } from 'react-redux';
 import store from '../../store';
 import VariantSelector from '../VariantSelector/index';
@@ -97,9 +97,10 @@ class ItemPage extends Component {
             <img src={this.state.imageChoice} alt={`${this.data.title} product shot`}/>
             <div className="underImageContainer">
               {this.data.images.map((image) => {
+                let smallImage = image.src.replace(".png", "_small.png");
                 return(
                   <button className="underImageButton" type="submit" onClick={() => this.setState({imageChoice: image.src, selected: image.id})}>
-                    <img className={this.state.selected === image.id ? "underImage selected" : "underImage"} src={image.src} alt="alternative"/>
+                    <img className={this.state.selected === image.id ? "underImage selected" : "underImage"} src={smallImage} alt="alternative"/>
                   </button>
                   );
                 }
@@ -117,30 +118,48 @@ class ItemPage extends Component {
             </span>All Items
           </Link>
           <h3 className="itemName">{this.data.title}</h3>
-          <p className="itemCost frm">${variant.price}</p>
           <p className="itemDescription">
             {this.data.description}
           </p>
+          <p className="itemCost frm">${variant.price}</p>
           <div className="itemOptions">
             {this.state.selectedOptions.Title ? <div></div> : <div className="optionsFlex">
-              <label className="Product__option">
+              <label className="ProductOption">
                 Select a size
               </label>
               {variantSelectors}
             </div>}
-            <div className="optionsFlex">
-              <label className="Product__option">
+            {/* <div className="optionsFlex">
+              <label className="ProductOption">
               </label>
-              <div className="number-input">
-                <button className="quantity-button" onClick={(e) => this.handleQuantityChange(e,"minus")}/>
+              <div className="numberInput">
+                <button className="quantityButton" onClick={(e) => this.handleQuantityChange(e,"minus")}/>
                 <input readOnly="readOnly" min="1" type="number" value={this.state.selectedVariantQuantity}></input>
-                <button onClick={(e) => this.handleQuantityChange(e,"plus")} className="quantity-button plus"/>
+                <button onClick={(e) => this.handleQuantityChange(e,"plus")} className="quantityButton plus"/>
+              </div>
+            </div> */}
+            <div className="optionsFlex">
+              <label className="ProductOption">
+              </label>
+              <button className="ProductBuy itemPage" onClick={(e) => this.addVariantToCart(variant.id, this.state.selectedVariantQuantity)}>Add to cart</button>
+            </div>
+            <div className="optionsFlex">
+              <div className="faqs" onClick={() => { const cur = this.state.fit; this.setState({fit: !cur})}}>Size & Fit</div>
+              <div className={this.state.fit ? "details active" : "details"}>
+                This is true to size
               </div>
             </div>
             <div className="optionsFlex">
-              <label className="Product__option">
-              </label>
-              <button className="Product__buy itemPage" onClick={(e) => this.addVariantToCart(variant.id, this.state.selectedVariantQuantity)}>Add to cart</button>
+              <div className="faqs" onClick={() => { const cur = this.state.fabric; this.setState({fabric: !cur})}}>Fabric & Care</div>
+              <div className={this.state.fabric ? "details active" : "details"}>
+                This is a test
+              </div>
+            </div>
+            <div className="optionsFlex">
+              <div className="faqs" onClick={() => { const cur = this.state.other; this.setState({other: !cur})}}>Other</div>
+              <div className={this.state.other ? "details active" : "details"}>
+                This is a test
+              </div>
             </div>
           </div>
         </div>
