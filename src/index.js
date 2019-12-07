@@ -7,11 +7,11 @@ import * as serviceWorker from './serviceWorker';
 import Client from 'shopify-buy';
 import { Provider } from 'react-redux';
 import store from './store';
-import './styles/app.css';
+import './styles/app.scss';
 import history from './history.js';
 import ItemPage from './components/ItemPage/index';
 import MainStore from './components/MainStore/index';
-import './styles/global.sass';
+import './styles/global.scss';
 
 
 const client = Client.buildClient({

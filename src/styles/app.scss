@@ -1,0 +1,66 @@
+/* INITIALIZERS + DEFAULTS
+ * ============================== */
+
+ *, *:before, *:after {
+   box-sizing: border-box;
+ }
+ 
+ html {
+   font-size: 65%;
+ }
+ 
+ body {
+   margin: 0;
+   padding: 0;
+   font-family: 'Raleway', sans-serif;
+   font-weight: 400;
+ }
+ 
+ img {
+   display: block;
+   max-width: 100%;
+   max-height: 100%;
+ }
+ 
+ h1 {
+   font-weight: 300;
+   margin: 0 0 15px;
+   font-size: 3rem;
+ }
+ 
+ h2 {
+   font-weight: 300;
+   margin: 0;
+   font-size: 2rem;
+ }
+ 
+ /* BASE APP
+  * ============================== */
+ 
+ .button {
+   background-color: #2752ff;
+   color: white;
+   border: none;
+   font-size: 1.2rem;
+   padding: 10px 17px;
+   cursor: pointer;
+ }
+ 
+ .button:hover,
+ .button:focus {
+   background-color: #222222;
+ }
+ 
+ .button:disabled {
+   background: #bfbfbf;
+   cursor: not-allowed;
+ }
+ .error {
+   display: block;
+   font-size: 15px;
+   padding: 10px;
+   position: relative;
+   min-height: 2.64286em;
+   background: #fbefee;
+   color: #c23628;
+ }
