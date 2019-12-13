@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {Row, Col} from 'react-bootstrap';
 import store from '../../store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { withRouter} from 'react-router-dom';
@@ -16,9 +17,14 @@ class MainStore extends Component {
       addVariantToCart={this.addVariantToCart}
       item={this.props.item}
     />;
-    return (
+    return (  
       <div>
-        {oProducts}
+      <Row className="justify-content-center itemSections">
+        <Col>
+          <h1>{this.props.item}</h1>
+          {oProducts}
+        </Col>
+      </Row>
       </div>
           
     );

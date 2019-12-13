@@ -109,7 +109,7 @@ class ItemPage extends Component {
           </div>
         </div>
         <div className="itemInfoWrapper">
-        <Link className="backLink" to="/">
+        <Link className="backLink" to="/all">
             <span className="small">
               <svg fill="#000000" height="13" viewBox="0 0 18 15" width="13" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 10l5 5 5-5z"/>

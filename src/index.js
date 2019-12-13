@@ -11,6 +11,7 @@ import './styles/app.scss';
 import history from './history.js';
 import ItemPage from './components/ItemPage/index';
 import MainStore from './components/MainStore/index';
+import Home from './components/Home/index';
 import './styles/global.scss';
 
 
@@ -34,12 +35,17 @@ client.shop.fetchInfo().then((res) => {
 ReactDOM.render(
   <Provider store={store}>
       <Router history={history}>
-        <App>
-          <Route exact path="/" render={() => <MainStore item="all"/>}/>
+        {/* <Home>
           <Route path="/item/:id" component={ItemPage}/>
-          <Route path="/sweatshirts" render={() => <MainStore item="Sweatshirt"/>}/>
-          <Route path="/shirts" render={() => <MainStore item="Shirt"/>}/>
-          <Route path="/hats" render={() => <MainStore item="Hat"/>} />
+        </Home> */}
+        <App>
+          <Route exact path="/" render={Home}/>
+          <Route path="/item/:id" component={ItemPage}/>
+          <Route path="/all" render={() => <MainStore item="All"/>}></Route>
+          <Route path="/sweatshirts" render={() => <MainStore item="Sweatshirts"/>}/>
+          <Route path="/shirts" render={() => <MainStore item="Shirts"/>}/>
+          <Route path="/hats" render={() => <MainStore item="Hats"/>} />
+          <Route path="/test" component={Home}/>
         </App>
       </Router>
   </Provider>,

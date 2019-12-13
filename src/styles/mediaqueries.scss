@@ -36,10 +36,36 @@
     flex: 1;
     font-size: 1.8rem;
   }
-  
+  .homeHero {
+    .homeText {
+      bottom: 240px;
+      margin-top: 6rem;
+      margin-bottom: -1.5rem;
+      .five {
+        font-size: 60px;
+        line-height: 40px;
+      }
+      .collection {
+        font-size: 30px;
+      }
+    }
+    .tiger {
+      width: 400px;
+    }
+    .description {
+      font-size: 15px;
+    }
+  }
+  .itemSections {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .itemImgWrapper {
+    width: 100% !important;
+  }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 426px) and (max-width: 768px) {
   .sideBar {
     position: fixed;
     z-index: 1;
@@ -89,6 +115,23 @@
   }
   .itemImgWrapper {
     width: 100% !important;
+  }
+  .homeHero {
+    .homeText {
+      bottom: 320px;
+      margin-top: 2rem;
+      margin-bottom: -2rem;
+      .five {
+        font-size: 80px;
+        line-height: 40px;;
+      }
+      .collection {
+        font-size: 40px;
+      }
+    }
+    .tiger {
+      height: 350px;
+    }
   }
 }
 
@@ -255,5 +298,44 @@
   }
   .mobileMenu {
     display: none;
+  }
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+  .homeHero {
+    .homeText {
+      bottom: 370px;
+      margin-top: 2rem;
+      margin-bottom: -2rem;
+      .five {
+        font-size: 80px;
+        line-height: 50px;
+      }
+      .collection {
+        font-size: 40px;
+      }
+    }
+    .tiger {
+      height: 450px;
+    }
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .homeHero {
+    .homeText {
+      bottom: 500px;
+      .five {
+        font-size: 150px;
+      }
+      .collection {
+        font-size: 100px;
+      }
+    }
+    .tiger {
+      // width: 80%;
+      height:780px;
+    }
   }
 }

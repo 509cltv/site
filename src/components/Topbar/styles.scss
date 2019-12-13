@@ -1,0 +1,24 @@
+.topbar {
+  position: sticky;
+  padding: 2rem 0;
+  .shop {
+    position: absolute;
+    top: 2rem;
+    right: 5rem;
+    cursor: pointer;
+  }
+}
+
+.listInline {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+  .link {
+    float: left;
+    margin: 0 1rem;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+  }
+}

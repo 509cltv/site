@@ -1,0 +1,23 @@
+.homeHero {
+  font-family: 'Oxygen Mono', monospace;
+  .homeText {
+    z-index: 3;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: -5rem;
+  }
+  .description {
+    margin-top: 1rem;
+    font-size: 20px;
+  }
+  .five {
+    font-size: 120px;
+    line-height: 100px;
+  }
+  .collection {
+    font-size: 70px;
+  }
+  .description {
+    text-align: center;
+  }
+}

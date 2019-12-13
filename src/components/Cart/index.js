@@ -5,7 +5,7 @@ import './styles.scss';
 class Cart extends Component {
   constructor(props) {
     super(props);
-
+    
     this.openCheckout = this.openCheckout.bind(this);
   }
 

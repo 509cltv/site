@@ -6,7 +6,7 @@ import {withRouter} from 'react-router-dom';
 class Products extends Component {
   render() {
     let products = this.props.products.map((product) => {
-      if (this.props.item === "all") {
+      if (this.props.item === "All") {
         return (
           <Product
             client={this.props.client}

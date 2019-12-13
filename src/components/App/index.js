@@ -5,8 +5,10 @@ import {Container,Row, Col} from 'react-bootstrap';
 import Cart from '../Cart/index';
 import store from '../../store';
 import '../../styles/animations.scss';
-import {withRouter, Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import Footer from '../Footer/index';
+import Topbar from '../Topbar/index';   
 
 class App extends Component {
   constructor(props) {
@@ -63,42 +65,10 @@ class App extends Component {
             updateQuantityInCart={this.updateQuantityInCart}
             removeLineItemInCart={this.removeLineItemInCart}
           />
-          <Container fluid={true}>
-            <Row>
-              <Row className="mobileMenu">
-                <Col onClick={() => this.setState({sideBarOpen: true})}>
-                  <div className="bar1"></div>
-                  <div className="bar2"></div>
-                  <div className="bar3"></div>
-                </Col>
-                <p className="headerName">509</p>
-                <i onClick={()=>store.dispatch({type: 'OPEN_CART' })} className="fa fa-shopping-cart cart_button justify-content-end"></i>
-              </Row>
-              <div className={this.state.sideBarOpen ? "openCover" : "closedCover"} onClick={() => this.setState({sideBarOpen: false})}></div>
-
-              <Col className={this.state.sideBarOpen ? "sideBar openSide" : "sideBar"} lg="2">
-                <Row className="d-flex justify-content-end">
-                  <ul className="list-inline ">
-                    <li className="name">509</li>
-                    <li className="underName">cltv</li>
-                  </ul>
-                </Row>
-                <Col className="spacer">&nbsp;</Col>
-                <Row className="d-flex justify-content-end menu">
-                  <ul className="list-inline">
-                    <Link to="/"><li className={this.props.history.location.pathname === '/' ? "selected" : ""}>All</li></Link>
-                    <Link to="/sweatshirts"><li className={this.props.history.location.pathname === '/sweatshirts' ? "selected" : ""}>Sweatshirts</li></Link>
-                    <Link to="/shirts"><li className={this.props.history.location.pathname === '/shirts' ? "selected" : ""}>Shirts</li></Link>
-                    <Link to="/hats"><li className={this.props.history.location.pathname === '/hats' ? "selected" : ""}>Hats</li></Link>
-                  </ul>
-                </Row>
-                <Col className="spacer">&nbsp;</Col>
-
-                <Row className="d-flex justify-content-end">
-                  <i onClick={()=>store.dispatch({type: 'OPEN_CART' })} className="fa fa-shopping-cart cart_button"></i>
-                </Row>
-              </Col>
-              <Col>
+          <Col>
+            <Container fluid={true}>
+              <Topbar></Topbar>
+              <Row className="justify-content-center">
                 <ReactCSSTransitionGroup
                   transitionName="content"
                   transitionEnterTimeout={500}
@@ -107,9 +77,10 @@ class App extends Component {
                       {this.props.children}
                     </div>
                 </ReactCSSTransitionGroup>
-              </Col>
-            </Row>
-          </Container>
+              </Row>
+            <Footer></Footer>
+            </Container>
+          </Col>
         </div>
       </React.Fragment>
     );
