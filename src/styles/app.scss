@@ -36,7 +36,9 @@
  
  /* BASE APP
   * ============================== */
- 
+ .appCol {
+   padding: 0 !important;
+ }
  .button {
    background-color: #2752ff;
    color: white;

@@ -1,0 +1,33 @@
+@import '../../styles/variables.scss';
+
+.footerContainer {
+  margin-top: 5rem;
+  padding: 0 !important;
+  .footerLow {
+    border-top: 1px solid lighten($black, 70%);
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    .footerName {
+      font-family: 'Oxygen Mono', monospace;
+      
+      .fiveOhNine {
+        font-size: 3rem;
+      }
+      .cltv {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .copyright {
+    justify-content: flex-end;
+  }
+  
+  .footerFlex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    flex-direction: column;
+  }
+}

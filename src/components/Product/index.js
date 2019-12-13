@@ -31,7 +31,7 @@ class Product extends Component {
         {this.props.product.images.length ? 
           <img onLoad={() => this.setState({imageLoaded: true})} src={variantImage.src} alt={`${this.props.product.title} product shot`}/> 
           : null}
-          <img className="overlayStyles" src={smallImage} {...imageLoaded && {style: {opacity: 0 }}} />
+          <img className="overlayStyles" alt="overlayStyles" src={smallImage} {...imageLoaded && {style: {opacity: 0 }}} />
       </div>
         <div className="ProductOverlay">
           <button className="ProductBuy button" onClick={() => this.props.history.push('/item/' + this.props.product.title, {data: JSON.stringify(this.props.product)})}>Quick View</button>
