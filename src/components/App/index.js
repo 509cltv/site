@@ -9,6 +9,7 @@ import {withRouter} from 'react-router-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Footer from '../Footer/index';
 import Topbar from '../Topbar/index';   
+import './styles.scss';
 
 class App extends Component {
   constructor(props) {
@@ -70,6 +71,7 @@ class App extends Component {
               <Topbar></Topbar>
               <Row className="justify-content-center">
                 <ReactCSSTransitionGroup
+                  className="transitionGroup"
                   transitionName="content"
                   transitionEnterTimeout={500}
                   transitionLeaveTimeout={300}>
