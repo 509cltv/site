@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import store from '../../store';
 import VariantSelector from '../VariantSelector/index';
 
-
 class ItemPage extends Component {
 
   constructor(props) {
@@ -129,15 +128,6 @@ class ItemPage extends Component {
               </label>
               {variantSelectors}
             </div>}
-            {/* <div className="optionsFlex">
-              <label className="ProductOption">
-              </label>
-              <div className="numberInput">
-                <button className="quantityButton" onClick={(e) => this.handleQuantityChange(e,"minus")}/>
-                <input readOnly="readOnly" min="1" type="number" value={this.state.selectedVariantQuantity}></input>
-                <button onClick={(e) => this.handleQuantityChange(e,"plus")} className="quantityButton plus"/>
-              </div>
-            </div> */}
             <div className="optionsFlex">
               <label className="ProductOption">
               </label>
