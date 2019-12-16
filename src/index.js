@@ -13,6 +13,7 @@ import ItemPage from './components/ItemPage/index';
 import MainStore from './components/MainStore/index';
 import Home from './components/Home/index';
 import './styles/global.scss';
+import ReactGA from 'react-ga';
 
 
 const client = Client.buildClient({
@@ -30,6 +31,12 @@ client.checkout.create().then((res) => {
 });
 client.shop.fetchInfo().then((res) => {
   store.dispatch({type: 'SHOP_FOUND', payload: res});
+});
+
+ReactGA.initialize("UA-154670614-1");
+history.listen(location => {
+  ReactGA.set({ page: location.pathname });
+  ReactGA.pageview(location.pathname);
 });
 
 ReactDOM.render(
