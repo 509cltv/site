@@ -63,6 +63,9 @@
   .itemImgWrapper {
     width: 100% !important;
   }
+  .ProductContainer {
+    min-height: auto;
+  }
 }
 
 @media screen and (min-width: 426px) and (max-width: 768px) {
@@ -132,6 +135,9 @@
     .tiger {
       height: 350px;
     }
+  }
+  .ProductContainer {
+    min-height: auto;
   }
 }
 
@@ -299,7 +305,7 @@
   .mobileMenu {
     display: none;
   }
-
+  
 }
 
 @media screen and (min-width: 769px) and (max-width: 1440px) {
